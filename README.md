@@ -67,7 +67,7 @@ algo-trading/
 Requires Python 3.11+. Use a virtual environment.
 
 ```bash
-git clone https://github.com/yourusername/algo-trading.git
+git clone https://github.com/kashish3114/algo-trading-backtester.git
 cd algo-trading
 
 python -m venv venv
@@ -112,12 +112,12 @@ After each run, trade history is saved to `results/ma_crossover_trades.csv` and
 
 ```
 ========== BACKTEST REPORT: MA CROSSOVER ==========
-Total Trades        : 14
-Winning Trades      : 5
-Losing Trades       : 9
-Win Rate            : 35.71%
-Total PnL           : -1800.90
-Average PnL/Trade   : -128.64
+Total Trades        : 7
+Winning Trades      : 2
+Losing Trades       : 5
+Win Rate            : 28.57%
+Total PnL           : -1597.50
+Average PnL/Trade   : -228.21
 Best Trade          : +1036.00  (TAKE_PROFIT, Sep 2025)
 Worst Trade         : -649.70   (STOP_LOSS, Jul 2025)
 ====================================================
@@ -129,6 +129,8 @@ Losing Trades       : 2
 Win Rate            : 50.00%
 Total PnL           : +510.50
 Average PnL/Trade   : +127.63
+Best Trade          : +855.40   (TAKE_PROFIT, Jul 2025)
+Worst Trade         : -652.10   (STOP_LOSS, Nov 2024)
 ====================================================
 ```
 
@@ -212,6 +214,7 @@ later would be straightforward.
 
 ## Dependencies
 
+```
 pandas
 numpy
 matplotlib
@@ -219,6 +222,7 @@ streamlit
 plotly
 pytest
 yfinance
+```
 
 No backtrader, zipline, ta-lib, or pandas-ta. The MA and RSI calculations are
 written from scratch — partly to avoid the dependency, partly because it's more

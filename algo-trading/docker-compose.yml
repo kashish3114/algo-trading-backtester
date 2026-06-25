@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  backtester:
+    build: .
+    container_name: algo-trading-backtester
+    volumes:
+      - ./results:/app/results
+      - ./trading.log:/app/trading.log
+    command: ["python", "main.py"]
+
+  dashboard:
+    build: .
+    container_name: algo-trading-dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./results:/app/results
+      - ./trading.log:/app/trading.log
+    command: ["streamlit", "run", "dashboard/app.py", "--server.address=0.0.0.0"]
